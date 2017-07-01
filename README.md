@@ -12,28 +12,29 @@ Each of the files listed here have unit tests associated with them and are requi
 
 stack.LinkedStack<T> - A Stack data structure that MUST use a Node based structure to allow for unbounded stack size. Note, you may not use the built in List types provided by the Java API.
 
-language.arith.SubOperator - A binary operator for performing subtraction on two integers.
-language.arith.MultOperator - A binary operator for performing multiplication on two integers
-language.arith.DivOperator - A binary operator for performing multiplication on two integers
-language.arith.NegateOperator - A unary operator for performing negation on a single integer
+**language.arith.SubOperator** - A binary operator for performing subtraction on two integers.
+**language.arith.MultOperator** - A binary operator for performing multiplication on two integers
+**language.arith.DivOperator** - A binary operator for performing multiplication on two integers
+**language.arith.NegateOperator** - A unary operator for performing negation on a single integer
 
-evaluator.arith.ArithPostFixEvaluator - An evaluator for simple arithmetic post fix notation
+**evaluator.arith.ArithPostFixEvaluator** - An evaluator for simple arithmetic post fix notation
 
-Test files
+### Test files
 In the test folder, you are provided with several JUnit test cases that will help you keep on track while completing this assignment. I recommend you run the tests often and use them as a checklist of things to do next. You are not allowed to modify these files. If you have errors in these files, it means the structure of the files found in the src folder have been altered in a way that will cause your submission to lose points.
 
-Support Code API
-The Support Code’s comments have been generated into a nicely formatted API that can be found here: http://people.cs.umass.edu/~jddevaughn/deerfield/projects/postfix_eval/doc/
+### Support Code API
+The Support Code’s comments have been generated into a nicely formatted API that can be found here: 
+
 https://jd12.github.io/postfix-evaluator/
 
 It is not important that you understand how the support code is implemented but it is important that you understand what the support code offers. It is highly recommended that you spend a day simply reading over the comments in each of the interfaces provided:
 
-stack.StackInterface
-parser.arith.PostFixParser
-language.Operator
-language.Operand
-language.BinaryOperator
-evaluator.PostFixEvaluator
+**stack.StackInterface**
+**parser.arith.PostFixParser**
+**language.Operator**
+**language.Operand**
+**language.BinaryOperator**
+**evaluator.PostFixEvaluator**
 
 
 ## Part One: Importing Project into Eclipse
