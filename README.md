@@ -56,7 +56,7 @@ If you are missing any of the above or errors are present in the project, seek h
 Due: May 5th 12pm 
 You need to implement a basic stack data structure using a linked list data type internally to allow for an unbounded structure. Start by reading the comments in the StackInterface interface. It will provide you with some direction on what each method needs to do. Also, it will be helpful to review Chapter 3 to see how a stack works and Chapter 4 to see how to implement a stack using a linked structure.
 
-Hint: It might be useful to write a class called Node<T> that supports basic linked node operations. 
+Hint: It might be useful to write a class called `Node<T>` that supports basic linked node operations. 
 
 The test associated with the LinkedStack class stack.LinkedStackTest in the test folder. You want to make sure you pass all of the tests provided. However, try and think of additional tests that might trip you up. Did you meet all of the requirements specified by the interface?
 
