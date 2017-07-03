@@ -30,16 +30,24 @@ https://jd12.github.io/postfix-evaluator/
 It is not important that you understand how the support code is implemented but it is important that you understand what the support code offers. It is highly recommended that you spend a day simply reading over the comments in each of the interfaces provided:
 
 **stack.StackInterface**
+
 **parser.arith.PostFixParser**
+
 **language.Operator**
+
 **language.Operand**
+
 **language.BinaryOperator**
+
 **evaluator.PostFixEvaluator**
 
 
 ## Part One: Importing Project into Eclipse
-Due: May 4th 11:15am
-Begin by downloading the provided project and importing it into your workspace. If you don’t know how to import a zip file into Eclipse, please go here
+Begin by cloning the provided project and importing it into your workspace. 
+
+`git clone <url>`
+
+If you don’t know how to import a zip file into Eclipse, please go here
 
 You should now have a project called postfix-student it is very important that you do not rename this project as it is used during the grading process. If the project is renamed, your assignment may not be graded.
 
