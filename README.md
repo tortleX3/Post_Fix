@@ -92,29 +92,28 @@ When you have finished your solution and are ready to submit, make your final co
 
 
 
-Bonus
+## Bonus
 
 Please go here if you would like some bonus points by implementing an infix evaluator
 
+## Additional Notes
 
-
+### Using the ArithPostFixParser
 
+You have been provided with a class for parsing arithmetic postfix expressions. It is not important that you understand how it is implemented but it is important that you understand what the interface provides for you. Read over the comments in the **parser.PostFixParser** interface carefully.
 
-Additional Notes
-Using the ArithPostFixParser
-You have been provided with a class for parsing arithmetic postfix expressions. It is not important that you understand how it is implemented but it is important that you understand what the interface provides for you. Read over the comments in the parser.PostFixParser interface carefully.
+A short example of its use can be found in **parser.arith.ArithPostFixParserExample**
 
-A short example of its use can be found in parser.arith.ArithPostFixParserExample
-
-Material on Stacks
+### Material on Stacks
 Stacks is covered in Chapter 3 book. If you are having trouble, utilize Piazza and classmates. 
 
-Material on Exceptions
-For this assignment, you will need to make use of exceptional situations (you are being tested on these). For a quick reference on how to throw an exception, check out language.BinaryOperator this is an abstract class that meets many of the requirements for the language.Operator interface. You will notice that its setOperand method has several exceptional states and throws the exceptions detailed in the language.Operator interface. Also, there is material available in the book in chapter 3 (focus on section 3.6).
+### Material on Exceptions
+For this assignment, you will need to make use of exceptional situations. For a quick reference on how to throw an exception, check out **language.BinaryOperator** this is an abstract class that meets many of the requirements for the **language.Operator** interface. You will notice that its `setOperand` method has several exceptional states and throws the exceptions detailed in the **language.Operator** interface. Also, there is material available in the book in chapter 3 (focus on section 3.6).
 
-Where is the Driver Class?
+### Where is the Driver Class?
 If you scan through the provided files, you will notice none of them contain a main method. This means that out of the box you can’t actually run your code. Instead, I highly recommend you create your own drivers for testing out your elements. For example, when you implement the MultOperator, you might write a driver somewhere with the following:
 
+```java
 public static void main(String[] args){
   Operator<Integer> multOp = new MultOperator();
   Operand<Integer> operand0 = new Operand<Integer>(5);
@@ -124,9 +123,11 @@ public static void main(String[] args){
   Operand<Integer> result = multOp.performOperation();
   System.out.println(result.getValue());
 }
+```
 
 I also recommend you write a Driver that reads in post fix expressions from the user and calculates them. This might look something like this:
 
+```java
 public static void main(String[] args){
 
    Scanner s = new Scanner(System.in);
@@ -140,13 +141,15 @@ public static void main(String[] args){
    // Maybe I could ask user if they want to enter another expression and loop
 
 }
+```
 
-What is this public static enum Type?
-In the ArithPostFixEvaluator code I provided for you I wrote a switch statement that has two cases: OPERAND and OPERATOR. If you decide to dig to see what these are, you will find the following:
+### What is this public static enum Type?
+In the `ArithPostFixEvaluator` code I provided for you I wrote a switch statement that has two cases: OPERAND and OPERATOR. If you decide to dig to see what these are, you will find the following:
 
+```java
 	/**
 	 * A {@link PostFixParser} can produce different types.
-	 * @author jddevaug
+	 * @author jcollard, jddevaug
 	 *
 	 */
 	public static enum Type {
@@ -161,6 +164,9 @@ In the ArithPostFixEvaluator code I provided for you I wrote a switch statement 
 		 */
 		OPERATOR;
 	}
+```
 
 It really isn’t that important that you understand what these are doing. It is more important that you understand their significance in this program. The PostFixParser can produce two different types, Operators and Operands. This class helps facilitate that information to the user in a more readable (and modular) way than a boolean would. The nextType method returns one of these two things indicating which method you should call next in your evaluator. Luckily, most of this code is written for you so you don’t have to worry too much about it. If you are really interested in knowing more about enumerated types in Java, I recommend you check out this: http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+
+
 
