@@ -138,20 +138,20 @@ Expression: 3 * 4 ^ 2 + 5
                                                       4
                                                       3                            *
 
-4) Remaining expression:        2 + 5          Operand stack               Operator stack
+4) Remaining expression:       2 + 5           Operand stack               Operator stack
                                                       4                            ^
                                                       3                            *  
 
-5) Remaining expression:           + 5         Operand stack               Operator stack
+5) Remaining expression:         + 5           Operand stack               Operator stack
                                                       2
                                                       4                            ^
                                                       3                            *  
 
-6) Remaining expression:           + 5         Operand stack               Operator stack
+6) Remaining expression:         + 5           Operand stack               Operator stack
                                                       16                                        
                                                       3                            *
  
-7) Remaining expression:              5        Operand stack               Operator stack
+7) Remaining expression:           5           Operand stack               Operator stack
                                                       48                           +
 
 
