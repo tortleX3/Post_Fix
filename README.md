@@ -92,9 +92,81 @@ When you have finished your solution and are ready to submit, make your final co
 
 
 
-## Bonus
+## Bonus: Infix Expression Evaluator
 
-Please go here if you would like some bonus points by implementing an infix evaluator
+
+Implement the following algorithm for the evaluation of arithmetic infix expressions. 
+
+Each operator has a precedence. The + and - operators have the lowest precedence, * and / have a higher (and equal) precedence, and ^ (which denotes “ raising to a power” in this project) has the highest. For example, 
+
+3 * 4 ^ 2 + 5 
+
+should mean the same as 
+
+(3 * (4  ^ 2)) + 5 
+
+with a value of 53. 
+
+In order to earn full points for the bonus you will have to implement test cases
+
+### Part One: Write an ExponentOperator class
+
+Write an `ExponentOperatorTest` class similar to that of the of the `PlusOperator` class. Try to think of additional scenarios you would like to test and write test cases for those scenarios. 
+
+Implement an `ExponentOperator` class that is similar to your `PlusOperator` class. Think about what the two operands represent and how perform operation would work for this class. 
+
+**Hint:** `Math.pow` might be of use to you in this class 
+
+### Part Two: Write an ArthInFixEvaluatorClass
+
+Write an `ArthInFixEvaluatorTest` class modeled after `ArthPostFixEvaluatorTest` class. Try to think of additional scenarios you would like to test and write test cases for those scenarios.
+
+Implement an `ArthInFixEvaluator` class that is similar to your `ArthPostFixEvaluator` class. 
+
+In your algorithm, use two stacks. One stack holds Operands, the other holds Operators. When you encounter a Operand, put it on the Operand stack. When you encounter an operator, push it on the operator stack if it has higher precedence than the operator on the top of the stack. Otherwise, pop an operator off the operator stack, pop two numbers off the number stack, and push the result of the computation on the number stack. Repeat until the top of the operator stack has lower precedence. At the end of the expression, clear the stack in the same way. For example, here is how the expression 3 * 4 ^ 2 + 5 is evaluated: 
+
+Expression: 3 * 4 ^ 2 + 5
+```
+
+1) Remaining expression: * 4 ^ 2 + 5           Operand stack               Operator stack 
+                                                      3 
+
+2) Remaining expression:   4 ^ 2 + 5           Operand stack               Operator stack 
+                                                      3                            * 
+
+3) Remaining expression:     ^ 2 + 5           Operand stack               Operator stack  
+                                                      4
+                                                      3                            *
+
+4) Remaining expression:        2 + 5          Operand stack               Operator stack
+                                                      4                            ^
+                                                      3                            *  
+
+5) Remaining expression:           + 5         Operand stack               Operator stack
+                                                      2
+                                                      4                            ^
+                                                      3                            *  
+
+6) Remaining expression:           + 5         Operand stack               Operator stack
+                                                      16                                        
+                                                      3                            *
+ 
+7) Remaining expression:              5        Operand stack               Operator stack
+                                                      48                           +
+
+
+8) Remaining expression:                        Operand stack              Operator stack
+                                                       5
+                                                       48                          +
+                                        
+
+9) Remaining expression:                        Operand stack                Operator stack
+                                                       53
+```
+                  
+
+
+
 
 ## Additional Notes
 
