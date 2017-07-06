@@ -155,13 +155,13 @@ Expression: 3 * 4 ^ 2 + 5
                                                       48                           +
 
 
-8) Remaining expression:                        Operand stack              Operator stack
-                                                       5
-                                                       48                          +
+8) Remaining expression:                       Operand stack               Operator stack
+                                                      5
+                                                      48                           +
                                         
 
-9) Remaining expression:                        Operand stack                Operator stack
-                                                       53
+9) Remaining expression:                       Operand stack               Operator stack
+                                                      53
 ```
                   
 
