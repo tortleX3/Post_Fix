@@ -74,13 +74,13 @@ You need to implement a basic stack data structure using a linked list data type
 The test associated with the `LinkedStack` class **stack.LinkedStackTest** are in the test folder. You want to make sure you pass all of the tests provided. However, try and think of additional tests that might trip you up. Did you meet all of the requirements specified by the interface?
 
 ## Part Three: Implement Arithmetic Operators
-Before you can even attempt to create a postfix evaluator, you will need to define what each of the possible postfix operators do. For this assignment, you are required to support addition, subtraction, multiplication, and negation of integers. To help facilitate this, you have been provided with an Operator<T> interface. Take a moment to review the interface. 
+Before you can even attempt to create a postfix evaluator, you will need to define what each of the possible postfix operators do. For this assignment, you are required to support addition, subtraction, multiplication, and negation of integers. To help facilitate this, you have been provided with an `Operator<T>` interface. Take a moment to review the interface. 
 
-Now run the operator.arith.PlusOperatorTest test. All of the tests pass! Lucky you. Go ahead and open up the PlusOperator class and you will see an implementation. Review this implementation then complete the SubOperator, DivOperator, and MultOperator classes. Each time you implement something, be sure to run the associated tests to see how you’re doing. 
+Now run the **operator.arith.PlusOperatorTest** test. All of the tests pass! Lucky you. Go ahead and open up the `PlusOperator` class and you will see an implementation. Review this implementation then complete the `SubOperator`, `DivOperator`, and `MultOperator` classes. Each time you implement something, be sure to run the associated tests to see how you’re doing. 
 
-For the DivOperator you’ll have to override the setOperand method to throw an IllegalStateException if the denominator is set to 0. After checking for the exception you can call BinaryOperator’s setOperand method and pass in the appropriate arguements. 
+For the `DivOperator` you’ll have to override the `setOperand` method to throw an `IllegalStateException` if the denominator is set to 0. After checking for the exception you can call BinaryOperator’s `setOperand` method and pass in the appropriate arguements. 
 
-Finally, you will need to implement the unary NegateOperator class. Negation is represented by the ‘!’ and flips the sign of the Operand. For example 5 ! would evaluate to -5 and -12 ! would evaluate to 12.  Although it is not required, it is recommended that you create an abstract class UnaryOperator first then extend it.
+Finally, you will need to implement the unary `NegateOperator` class. Negation is represented by the ‘!’ and flips the sign of the Operand. For example 5 ! would evaluate to -5 and -12 ! would evaluate to 12.  Although it is not required, it is recommended that you create an abstract class `UnaryOperator` based off of BinaryOperator first then extend it.
 
 ## Part Four: Implement a Postfix Arithmetic Evaluator
 Now that we have a stack and operators defined, it is time to create an evaluator. Open up the evaluator.arith.ArithPostFixEvaluator class and you will see four TODO comments.
