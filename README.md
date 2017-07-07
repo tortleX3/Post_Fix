@@ -13,6 +13,7 @@ For this assignment, you will be implementing a Post Fix Evaluator to perform ba
 **[Part Four: Implement a Postfix Arithmetic Evaluator](#part-four-implement-a-postfix-arithmetic-evaluator)**<br>
 **[Part Five: Commit Project and Submit Pull Request](#part-five-commit-project-and-submit-pull-request)**<br>
 **[Bonus: Infix Expression Evaluator](#bonus-infix-expression-evaluator)**<br>
+**[Additional Notes: Help for the project](#additional-notes)**<br>
 
 ## Book
 This assignment is based off Chapter 3 and Chapter 4 in the Java Software Structures 
