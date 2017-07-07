@@ -4,6 +4,16 @@
 ## Overview
 For this assignment, you will be implementing a Post Fix Evaluator to perform basic arithmetic.
 
+### Table of Contents
+**[Files to complete](#files-to-complete)**<br>
+**[Support Code API](#support-code-api)**<br>
+**[Part One: Importing Project into Eclipse](#part-one)**<br>
+**[Part Two: Implementing LinkedStack](#part-two)**<br>
+**[Part Three: Implement Arithmetic Operators](#part-three)**<br>
+**[Part Four: Implement a Postfix Arithmetic Evaluator](#part-four)**<br>
+**[Part Five: Commit Project and Submit Pull Request](#part-five)**<br>
+**[Bonus: Infix Expression Evaluator](#bonus)**<br>
+
 ## Book
 This assignment is based off Chapter 3 and Chapter 4 in the Java Software Structures 
 
@@ -46,6 +56,7 @@ You should then go to Eclipse. File --> Import. Double-click on General and then
 You should now have a project called postfix-student it is very important that you do not rename this project as it is used during the grading process. If the project is renamed, your assignment may not be graded.
 
 By default, your project should have no errors and contain the following root items:
+
 **src** - The source folder where all code you are submitting must go. You can change anything you want in this folder, you can add new files, etc...<br>
 **test** - The test folder where all of the public unit tests are available<br>
 **support** - This folder contains support code that I encourage you to use (and must be used to pass certain tests). You are not allowed to change anything in this folder.<br>
