@@ -7,12 +7,12 @@ For this assignment, you will be implementing a Post Fix Evaluator to perform ba
 ### Table of Contents
 **[Files to complete](#files-to-complete)**<br>
 **[Support Code API](#support-code-api)**<br>
-**[Part One: Importing Project into Eclipse](#part-one)**<br>
-**[Part Two: Implementing LinkedStack](#part-two)**<br>
-**[Part Three: Implement Arithmetic Operators](#part-three)**<br>
-**[Part Four: Implement a Postfix Arithmetic Evaluator](#part-four)**<br>
-**[Part Five: Commit Project and Submit Pull Request](#part-five)**<br>
-**[Bonus: Infix Expression Evaluator](#bonus)**<br>
+**[Part One: Importing Project into Eclipse](#part-one-importing-project-into-eclipse)**<br>
+**[Part Two: Implementing LinkedStack](#part-two-implementing-linkedstack)**<br>
+**[Part Three: Implement Arithmetic Operators](#part-three-implement-arithmetic-operators)**<br>
+**[Part Four: Implement a Postfix Arithmetic Evaluator](#part-four-implement-a-postfix-arithmetic-evaluator)**<br>
+**[Part Five: Commit Project and Submit Pull Request](#part-five-commit-project-and-submit-pull-request)**<br>
+**[Bonus: Infix Expression Evaluator](#bonus-infix-expression-evaluator)**<br>
 
 ## Book
 This assignment is based off Chapter 3 and Chapter 4 in the Java Software Structures 
