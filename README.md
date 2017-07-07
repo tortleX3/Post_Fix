@@ -46,15 +46,11 @@ You should then go to Eclipse. File --> Import. Double-click on General and then
 You should now have a project called postfix-student it is very important that you do not rename this project as it is used during the grading process. If the project is renamed, your assignment may not be graded.
 
 By default, your project should have no errors and contain the following root items:
-**src** - The source folder where all code you are submitting must go. You can change anything you want in this folder, you can add new files, etc...
-
-**test** - The test folder where all of the public unit tests are available
-
-**support** - This folder contains support code that I encourage you to use (and must be used to pass certain tests). You are not allowed to change anything in this folder.
-
-**JUnit 4** - A library that is used to run the test programs
-
-**JRE System Library** - This is what allows java to run
+**src** - The source folder where all code you are submitting must go. You can change anything you want in this folder, you can add new files, etc...<br>
+**test** - The test folder where all of the public unit tests are available<br>
+**support** - This folder contains support code that I encourage you to use (and must be used to pass certain tests). You are not allowed to change anything in this folder.<br>
+**JUnit 4** - A library that is used to run the test programs<br>
+**JRE System Library** - This is what allows java to run<br>
 
 If you are missing any of the above or errors are present in the project, seek help immediately so you can get started on the project right away. The project does start with a warning in evaluator.arith.ArithPostFixEvaluator, this is okay.
 
