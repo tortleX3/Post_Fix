@@ -28,12 +28,12 @@ https://jd12.github.io/postfix-evaluator/
 
 It is not important that you understand how the support code is implemented but it is important that you understand what the support code offers. It is highly recommended that you spend a day simply reading over the comments in each of the interfaces provided:
 
-**stack.StackInterface**
-**parser.arith.PostFixParser**
-**language.Operator**
-**language.Operand**
-**language.BinaryOperator**
-**evaluator.PostFixEvaluator**
+**stack.StackInterface**<br>
+**parser.arith.PostFixParser**<br>
+**language.Operator**<br>
+**language.Operand**<br>
+**language.BinaryOperator**<br>
+**evaluator.PostFixEvaluator**<br>
 
 
 ## Part One: Importing Project into Eclipse
