@@ -115,7 +115,7 @@ should mean the same as
 
 with a value of 53. 
 
-In order to earn full points for the bonus you will have to implement test cases
+In order to earn full points for the bonus you will have to implement robust test cases
 
 ### Part One: Write an ExponentOperator class
 
