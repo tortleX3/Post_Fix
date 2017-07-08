@@ -64,10 +64,10 @@ By default, your project should have no errors and contain the following root it
 **JUnit 4** - A library that is used to run the test programs<br>
 **JRE System Library** - This is what allows java to run<br>
 
-If you are missing any of the above or errors are present in the project, seek help immediately so you can get started on the project right away. The project does start with a warning in evaluator.arith.ArithPostFixEvaluator, this is okay.
+If you are missing any of the above or errors are present in the project, seek help immediately so you can get started on the project right away. The project does start with a warning in **evaluator.arith.ArithPostFixEvaluator**, this is okay.
 
 ## Part Two: Implementing LinkedStack
-You need to implement a basic stack data structure using a linked list data type internally to allow for an unbounded structure. Start by reading the comments in the StackInterface interface. It will provide you with some direction on what each method needs to do. Also, it will be helpful to review Chapter 3 to see how a stack works and Chapter 4 to see how to implement a stack using a linked structure.
+You need to implement a basic stack data structure using a linked list data type internally to allow for an unbounded structure. Start by reading the comments in the `StackInterface` interface. It will provide you with some direction on what each method needs to do. Also, it will be helpful to review Chapter 3 to see how a stack works and Chapter 4 to see how to implement a stack using a linked structure.
 
 **Hint:** It might be useful to write a class called `Node<T>` that supports basic linked node operations. 
 
@@ -83,15 +83,15 @@ For the `DivOperator` you’ll have to override the `setOperand` method to throw
 Finally, you will need to implement the unary `NegateOperator` class. Negation is represented by the ‘!’ and flips the sign of the Operand. For example 5 ! would evaluate to -5 and -12 ! would evaluate to 12.  Although it is not required, it is recommended that you create an abstract class `UnaryOperator` based off of BinaryOperator first then extend it.
 
 ## Part Four: Implement a Postfix Arithmetic Evaluator
-Now that we have a stack and operators defined, it is time to create an evaluator. Open up the evaluator.arith.ArithPostFixEvaluator class and you will see four TODO comments.
+Now that we have a stack and operators defined, it is time to create an evaluator. Open up the **evaluator.arith.ArithPostFixEvaluator** class and you will see four TODO comments.
 
 Before starting, check out the **evaluator.arith.ArithPostFixEvaluatorTest** class to see examples of how the evaluator is expected to be called and the results that are expected to be returned.
 
 First, you want to initialize the stack you will be using with your implementation.
 
-Second, determine what you will do when you see an Operand.
+Second, determine what you will do when you see an `Operand`.
 
-Third, determine what you will do when you see an Operator.
+Third, determine what you will do when you see an `Operator`.
 
 Finally, determine what you will return.
 
