@@ -15,7 +15,9 @@ public class PlusOperatorTest {
   private Operand<Integer> op1;
 
 
-
+  /**
+   * Runs before each test.
+   */
   @Before
   public void setup() {
     operator = new PlusOperator();

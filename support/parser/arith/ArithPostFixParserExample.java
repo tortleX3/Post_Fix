@@ -7,6 +7,11 @@ import parser.PostFixParser.Type;
 
 public class ArithPostFixParserExample {
 
+  
+  /**
+   * Main method.
+   * @param args - command line arguments passed into class
+   */
   @SuppressWarnings("unused")
   public static void main(String[] args) {
 

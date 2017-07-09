@@ -13,12 +13,13 @@ public interface Operator<T> {
    * Returns the number of {@link Operand}s that this {@link Operator}
    * needs to perform its operation.
    * @return the number of {@link Operand}s that this {@link Operator}
-   * needs to perform its operation. 
+   *         needs to perform its operation.
    */
   public int getNumberOfArguments();
 
   /**
-   * Performs this operation on values supplied via the {@link Operator#setOperand(int, Operand)} method
+   * Performs this operation on values supplied via the 
+   * {@link Operator#setOperand(int, Operand)} method
    * and returns the resulting {@link Operand}.
    * @return the result of applying this {@link Operator} to its {@link Operand}s
    * @throws IllegalStateException if the required {@link Operand}s were not set. 
@@ -27,7 +28,8 @@ public interface Operator<T> {
 
   /**
    * <p>Sets the specified {@link Operand}.</p>
-   * <p><b>Note</b>: {@link Operand}s positions are indexed by 0 so the first {@link Operand} should be set with 0, the
+   * <p><b>Note</b>: {@link Operand}s positions are indexed by 0 
+   * so the first {@link Operand} should be set with 0, the
    * second with 1, third with 2, etc...</p>
    * @param position the position of the operand
    * @param operand the {@link Operand} to set.

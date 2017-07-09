@@ -46,14 +46,16 @@ public interface PostFixParser<T> {
   /**
    * Returns the next {@link Operand}.
    * @return the next {@link Operand}.
-   * @Throws IllegalStateException if the next parsable was not an Operand or there are no more parsables.
+   * @Throws IllegalStateException if the next parsable was not an Operand 
+   *         or there are no more parsables.
    */
   public Operand<T> nextOperand();
 
   /**
    * Returns the next {@link Operator}.
    * @return the next {@link Operator}.
-   * @Throws IllegalStateException if the next parsable was not an {@link Operator} or there are no more parsables.
+   * @Throws IllegalStateException if the next parsable was not an {@link Operator} 
+   *         or there are no more parsables.
    */
   public Operator<T> nextOperator();
 

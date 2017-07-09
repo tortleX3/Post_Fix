@@ -9,7 +9,7 @@ package stack;
 public class LinkedStack<T> implements StackInterface<T> {
 
   /**
-   * {@inheritDoc}
+   * {@inheritDoc}.
    */
   @Override
   public T pop() throws StackUnderflowException {
@@ -18,7 +18,7 @@ public class LinkedStack<T> implements StackInterface<T> {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritDoc}.
    */
   @Override
   public T top() throws StackUnderflowException {
@@ -27,7 +27,7 @@ public class LinkedStack<T> implements StackInterface<T> {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritDoc}.
    */
   @Override
   public boolean isEmpty() {
@@ -36,7 +36,7 @@ public class LinkedStack<T> implements StackInterface<T> {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritDoc}.
    */
   @Override
   public int size() {
@@ -45,7 +45,7 @@ public class LinkedStack<T> implements StackInterface<T> {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritDoc}.
    */
   @Override
   public void push(T elem) {

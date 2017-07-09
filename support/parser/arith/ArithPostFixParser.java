@@ -26,17 +26,16 @@ import parser.PostFixParser;
  * <pre>
  * Example:
  *   PostFixParser<Integer> parser = new ArithPostFixParser("1 2 +");
- * 		
  *  boolean next = parser.hasNext(); // Returns true because there are more elements to be consumed
- * 	Type nextP = parser.nextType(); // Returns OPERAND because the next element is an operand
- * 	Operand<Integer> o0 = parser.nextOperand(); // Returns an operand wrapping 1
- * 	next = parser.hasNext(); // Returns true because there are more elements to be consumed
- * 	nextP = parser.nextType(); // Returns OPERAND because the next element is an operand
- * 	Operand<Integer> o1 = parser.nextOperand(); // Returns an operand wrapping 2
- * 	next = parser.hasNext(); // Returns true because there are more elements to be consumed
- * 	nextP = parser.nextType(); // Returns OPERATOR because the next element is an operand
- * 	Operator<Integer> operator = parser.nextOperator(); // Returns the PlusOperator 		
- * 	next = parser.hasNext(); // Returns false because all of the elements have been consumed
+ *  Type nextP = parser.nextType(); // Returns OPERAND because the next element is an operand
+ *  Operand<Integer> o0 = parser.nextOperand(); // Returns an operand wrapping 1
+ *  next = parser.hasNext(); // Returns true because there are more elements to be consumed
+ *  nextP = parser.nextType(); // Returns OPERAND because the next element is an operand
+ *  Operand<Integer> o1 = parser.nextOperand(); // Returns an operand wrapping 2
+ *  next = parser.hasNext(); // Returns true because there are more elements to be consumed
+ *  nextP = parser.nextType(); // Returns OPERATOR because the next element is an operand
+ *  Operator<Integer> operator = parser.nextOperator(); // Returns the PlusOperator
+ *  next = parser.hasNext(); // Returns false because all of the elements have been consumed
  * </pre>
  * 
  * 
@@ -131,17 +130,19 @@ public class ArithPostFixParser implements PostFixParser<Integer> {
    *         expression.
    */
   public ArithPostFixParser(String expr) {
-    if (expr == null)
+    if (expr == null) {
       throw new NullPointerException("The expression must be non-null.");
-    if (!isParseable(expr))
+    }
+    if (!isParseable(expr)) {
       throw new IllegalArgumentException("The string \"" + expr
           + "\" is not a valid ArithPostFix expression.");
+    }
     this.expr = expr;
     this.tokenizer = new Scanner(this.expr);
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritDoc}.
    */
   @Override
   public boolean hasNext() {
@@ -151,8 +152,9 @@ public class ArithPostFixParser implements PostFixParser<Integer> {
 
   private final void getNextParsable() {
     // If the next parseable has not been given, do nothing.
-    if (nextOperand != null || nextOperator != null)
+    if (nextOperand != null || nextOperator != null) {
       return;
+    }
     // If the token is an int, generate an integer operand
     if (tokenizer.hasNextInt()) {
       int token = tokenizer.nextInt();
@@ -166,36 +168,40 @@ public class ArithPostFixParser implements PostFixParser<Integer> {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritDoc}.
    */
   @Override
   public Type nextType() {
-    if (!hasNext())
+    if (!hasNext()) {
       throw new IllegalStateException("End of expression was reached.");
-    if (nextOperator != null)
+    }
+    if (nextOperator != null) {
       return Type.OPERATOR;
+    }
     return Type.OPERAND;
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritDoc}.
    */
   @Override
   public Operand<Integer> nextOperand() {
-    if (nextType() != PostFixParser.Type.OPERAND)
+    if (nextType() != PostFixParser.Type.OPERAND) {
       throw new IllegalStateException("Operand could not be parsed.");
+    }
     Operand<Integer> temp = nextOperand;
     nextOperand = null;
     return temp;
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritDoc}.
    */
   @Override
   public Operator<Integer> nextOperator() {
-    if (nextType() != PostFixParser.Type.OPERATOR)
+    if (nextType() != PostFixParser.Type.OPERATOR) {
       throw new IllegalStateException("Operator could not be parsed.");
+    }
     Operator<Integer> temp = nextOperator;
     nextOperator = null;
     return temp;

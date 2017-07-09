@@ -22,7 +22,7 @@ public abstract class BinaryOperator<T> implements Operator<T> {
   }
 
   /**
-   * {@inheritDoc}
+   * {@inheritDoc}.
    */
   @Override
   public void setOperand(int i, Operand<T> operand) {
@@ -30,7 +30,8 @@ public abstract class BinaryOperator<T> implements Operator<T> {
       throw new NullPointerException("Could not set null operand.");
     }
     if (i > 1) {
-      throw new IllegalArgumentException("Binary operator only accepts operands 0 and 1 but recieved " + i + ".");
+      throw new IllegalArgumentException("Binary operator only accepts operands 0 and 1 "
+                                          + "but recieved " + i + ".");
     }
     if (i == 0) {
       if (op0 != null) {
