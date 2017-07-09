@@ -74,11 +74,11 @@ You need to implement a basic stack data structure using a linked list data type
 The test associated with the `LinkedStack` class **stack.LinkedStackTest** are in the test folder. You want to make sure you pass all of the tests provided. However, try and think of additional tests that might trip you up. Did you meet all of the requirements specified by the interface?
 
 ## Part Three: Implement Arithmetic Operators
-Before you can even attempt to create a postfix evaluator, you will need to define what each of the possible postfix operators do. For this assignment, you are required to support addition, subtraction, multiplication, and negation of integers. To help facilitate this, you have been provided with an `Operator<T>` interface. Take a moment to review the interface. 
+Before you can even attempt to create a postfix evaluator, you will need to define what each of the possible postfix operators do. For this assignment, you are required to support addition, subtraction, multiplication, division and negation of integers. To help facilitate this, you have been provided with an `Operator<T>` interface. Take a moment to review the interface. 
 
 Now run the **operator.arith.PlusOperatorTest** test. All of the tests pass! Lucky you. Go ahead and open up the `PlusOperator` class and you will see an implementation. Review this implementation then complete the `SubOperator`, `DivOperator`, and `MultOperator` classes. Each time you implement something, be sure to run the associated tests to see how you’re doing. 
 
-For the `DivOperator` you’ll have to override the `setOperand` method to throw an `IllegalStateException` if the denominator is set to 0. After checking for the exception you can call BinaryOperator’s `setOperand` method and pass in the appropriate arguements. 
+For the `DivOperator` you’ll have to override the `setOperand` method to throw an `IllegalStateException` if the denominator is set to 0. After checking for the exception you can call BinaryOperator’s `setOperand` method and pass in the appropriate arguments. 
 
 Finally, you will need to implement the unary `NegateOperator` class. Negation is represented by the ‘!’ and flips the sign of the Operand. For example 5 ! would evaluate to -5 and -12 ! would evaluate to 12.  Although it is not required, it is recommended that you create an abstract class `UnaryOperator` based off of BinaryOperator first then extend it.
 
@@ -115,11 +115,11 @@ should mean the same as
 
 with a value of 53. 
 
-In order to earn full points for the bonus you will have to implement robust test cases
+In order to earn full points for the bonus you will have to implement a robust test suite.
 
 ### Part One: Write an ExponentOperator class
 
-Write an `ExponentOperatorTest` class similar to that of the of the `PlusOperator` class. Try to think of additional scenarios you would like to test and write test cases for those scenarios. 
+Write an `ExponentOperatorTest` class similar to that of the of the `PlusOperatorTest` class. Try to think of additional scenarios you would like to test and write test cases for those scenarios. 
 
 Implement an `ExponentOperator` class that is similar to your `PlusOperator` class. Think about what the two operands represent and how perform operation would work for this class. 
 
@@ -131,7 +131,7 @@ Write an `ArthInFixEvaluatorTest` class modeled after `ArthPostFixEvaluatorTest`
 
 Implement an `ArthInFixEvaluator` class that is similar to your `ArthPostFixEvaluator` class. 
 
-In your algorithm, use two stacks. One stack holds Operands, the other holds Operators. When you encounter a Operand, put it on the Operand stack. When you encounter an operator, push it on the operator stack if it has higher precedence than the operator on the top of the stack. Otherwise, pop an operator off the operator stack, pop two numbers off the number stack, and push the result of the computation on the number stack. Repeat until the top of the operator stack has lower precedence. At the end of the expression, clear the stack in the same way. For example, here is how the expression 3 * 4 ^ 2 + 5 is evaluated: 
+In your algorithm, use two stacks. One stack holds Operands, the other holds Operators. When you encounter a Operand, put it on the Operand stack. When you encounter an Operator, push it on the Operator stack if it has higher precedence than the operator on the top of the stack. Otherwise, pop an Operator off the Operator stack, pops the appropriate number of Operands off the Operand stack, and push the result of the computation on the Operand stack. Repeat until the top of the Operator stack has lower precedence. At the end of the expression, clear the stack in the same way. For example, here is how the expression 3 * 4 ^ 2 + 5 is evaluated: 
 
 Expression: 3 * 4 ^ 2 + 5
 ```
