@@ -12,6 +12,9 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'checkstyle'
 apply plugin: 'findbugs'
+apply plugin: 'pmd'
+
+checkstyleTest.enabled = false
 
 sourceSets {
      main {
