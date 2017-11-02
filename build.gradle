@@ -48,6 +48,13 @@ dependencies {
 }
 
 checkstyle {
-    // configFile file('checkstyle/checkstyle.xml')
-    toolVersion "7.6.1"   // set Checkstyle version here
+    configFile = file('config/checkstyle/checkstyle.xml')
+    toolVersion = "8.1"   // set Checkstyle version here
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
 }
