@@ -15,6 +15,7 @@ apply plugin: 'findbugs'
 apply plugin: 'pmd'
 
 checkstyleTest.enabled = false
+findbugsTest.enabled = false
 
 sourceSets {
      main {
@@ -48,8 +49,19 @@ dependencies {
 }
 
 checkstyle {
+    ignoreFailures = true
     configFile = file('config/checkstyle/checkstyle.xml')
     toolVersion = "8.1"   // set Checkstyle version here
+}
+
+findbugs {
+   ignoreFailures = true
+}
+
+pmd {
+  ignoreFailures = true
+  ruleSetFiles = files("config/pmd/ruleset.xml")
+  reportsDir = file("$project.buildDir/reports/pmd")
 }
 
 tasks.withType(FindBugs) {
