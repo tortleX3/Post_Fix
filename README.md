@@ -55,7 +55,7 @@ Begin by cloning the provided project and importing it into your workspace.
 After cloning this repository you want to run these commands
 
 ```
-cp pre-commit ./git/hooks
+cp pre-commit .git/hooks
 chmod -x .git/hooks/pre-commit
 ```
 
