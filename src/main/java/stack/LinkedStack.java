@@ -8,13 +8,24 @@ package stack;
  */
 public class LinkedStack<T> implements StackInterface<T> {
 
+  Node<T> firstItem;
+  int size;
+  public LinkedStack() {
+     size = 0;
+     firstItem = null;
+  }
   /**
    * {@inheritDoc}.
    */
   @Override
   public T pop() throws StackUnderflowException {
-    // TODO Auto-generated method stub
-    return null;
+    if(isEmpty()) return null;
+
+    T temp = firstItem.elem;
+    Node n = firstItem.next;
+    firstItem = n;
+    size--;
+    return temp;
   }
 
   /**
@@ -22,8 +33,10 @@ public class LinkedStack<T> implements StackInterface<T> {
    */
   @Override
   public T top() throws StackUnderflowException {
-    // TODO Auto-generated method stub
-    return null;
+    if(firstItem == null) return null;
+    else {
+      return firstItem.elem;
+    }
   }
 
   /**
@@ -31,8 +44,8 @@ public class LinkedStack<T> implements StackInterface<T> {
    */
   @Override
   public boolean isEmpty() {
-    // TODO Auto-generated method stub
-    return false;
+    if(firstItem == null) return true;
+    else return false;
   }
 
   /**
@@ -40,8 +53,8 @@ public class LinkedStack<T> implements StackInterface<T> {
    */
   @Override
   public int size() {
-    // TODO Auto-generated method stub
-    return 0;
+    if(firstItem == null) return 0;
+    return size;
   }
 
   /**
@@ -49,8 +62,8 @@ public class LinkedStack<T> implements StackInterface<T> {
    */
   @Override
   public void push(T elem) {
-    // TODO Auto-generated method stub
-
+    Node<T> newItem = new Node(elem, firstItem);
+    firstItem = newItem;
+    size++;
   }
-
 }
