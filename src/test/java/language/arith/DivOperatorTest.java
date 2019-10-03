@@ -64,6 +64,17 @@ public class DivOperatorTest {
     assertEquals("Operator applied to 0 and 2 should produce 0.", 0, value);
   }
 
+  @Test
+  public void testPerformOperationNegativeOne() {
+    operator.setOperand(0, new Operand<Integer>(100));
+    operator.setOperand(1, new Operand<Integer>(-1));
+
+    Operand<Integer> result = operator.performOperation();
+    int value = result.getValue();
+    assertEquals("Operator applied to 100 and -1 should produce -100.", -100, value);
+  }
+
+
   @Test (timeout = 5000)
   public void testPerformOperationNegativeResult() {
     operator.setOperand(0, new Operand<Integer>(-20));
