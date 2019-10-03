@@ -54,6 +54,16 @@ public class DivOperatorTest {
     assertEquals("Operator applied to -20 and -5 should produce 4.", 4,  value);
   }
 
+  @Test
+  public void testPerformOperationZeroResult() {
+    operator.setOperand(0, new Operand<Integer>(0));
+    operator.setOperand(1, new Operand<Integer>(2));
+
+    Operand<Integer> result = operator.performOperation();
+    int value = result.getValue();
+    assertEquals("Operator applied to 0 and 2 should produce 0.", 0, value);
+  }
+
   @Test (timeout = 5000)
   public void testPerformOperationNegativeResult() {
     operator.setOperand(0, new Operand<Integer>(-20));
@@ -99,5 +109,4 @@ public class DivOperatorTest {
     operator.setOperand(1, new Operand<Integer>(0));
     fail("Operator should not allow the denominator to be set to zero");
   }
-
 }
