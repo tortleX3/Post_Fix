@@ -34,6 +34,26 @@ public class MultOperatorTest {
     assertEquals("Operator applied to 5 and 7 should produce 35.", 35,  value);
   }
 
+  @Test (timeout = 5000)
+  public void testPerformOperationNegativeResult() {
+    operator.setOperand(0, new Operand<Integer>(-2));
+    operator.setOperand(1, new Operand<Integer>(8));
+
+    Operand<Integer> result = operator.performOperation();
+    int value = result.getValue();
+    assertEquals("Operator applied to -2 and 8 should produce -16.", -16,  value);
+  }
+
+  @Test (timeout = 5000)
+  public void testPerformOperationZeroResult() {
+    operator.setOperand(0, new Operand<Integer>(0));
+    operator.setOperand(1, new Operand<Integer>(8));
+
+    Operand<Integer> result = operator.performOperation();
+    int value = result.getValue();
+    assertEquals("Operator applied to 0 and 8 should produce 0.", 0,  value);
+  }
+
   @Test (timeout = 5000, expected = IllegalStateException.class)
   public void testIllegalStateException() {
     operator.setOperand(0, new Operand<Integer>(5));
