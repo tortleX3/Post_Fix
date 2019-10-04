@@ -7,9 +7,16 @@ package stack;
  * @param <T> the elements stored in the stack
  */
 public class LinkedStack<T> implements StackInterface<T> {
-
-  Node<T> firstItem;
-  int size;
+  /***
+   * <p></p>
+   * firstItem stores top item.
+   */
+  private Node<T> firstItem;
+  /***
+   * <p></p>
+   * size stores number of elements.
+   */
+  private int size;
   public LinkedStack() {
      size = 0;
      firstItem = null;
@@ -19,11 +26,12 @@ public class LinkedStack<T> implements StackInterface<T> {
    */
   @Override
   public T pop() throws StackUnderflowException {
-    if(isEmpty()) return null;
+    if (isEmpty()) {
+      throw new StackUnderflowException("Attempting to pop an empty stack");
+    }
 
-    T temp = firstItem.elem;
-    Node n = firstItem.next;
-    firstItem = n;
+    T temp = firstItem.getElem();
+    firstItem = firstItem.getNext();
     size--;
     return temp;
   }
@@ -33,9 +41,10 @@ public class LinkedStack<T> implements StackInterface<T> {
    */
   @Override
   public T top() throws StackUnderflowException {
-    if(firstItem == null) return null;
-    else {
-      return firstItem.elem;
+    if (isEmpty()) {
+      throw new StackUnderflowException("Attempting to top an empty stack");
+    } else {
+      return firstItem.getElem();
     }
   }
 
@@ -44,8 +53,7 @@ public class LinkedStack<T> implements StackInterface<T> {
    */
   @Override
   public boolean isEmpty() {
-    if(firstItem == null) return true;
-    else return false;
+    return firstItem == null;
   }
 
   /**
@@ -53,7 +61,6 @@ public class LinkedStack<T> implements StackInterface<T> {
    */
   @Override
   public int size() {
-    if(firstItem == null) return 0;
     return size;
   }
 
@@ -62,8 +69,7 @@ public class LinkedStack<T> implements StackInterface<T> {
    */
   @Override
   public void push(T elem) {
-    Node<T> newItem = new Node(elem, firstItem);
-    firstItem = newItem;
+    firstItem = new Node(elem, firstItem);
     size++;
   }
 }
