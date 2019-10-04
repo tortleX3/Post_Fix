@@ -43,6 +43,15 @@ public class NegateOperatorTest {
   }
 
   @Test (timeout = 5000)
+  public void testPerformOperationZero() {
+    operator.setOperand(0, new Operand<Integer>(0));
+
+    Operand<Integer> result = operator.performOperation();
+    int value = result.getValue();
+    assertEquals("Operator applied to 0 should produce 0.", 0,  value);
+  }
+
+  @Test (timeout = 5000)
   public void testGetNumberOfArguments() {
     assertEquals("Unary operator should have 1 argument.", operator.getNumberOfArguments(), 1);
   }
