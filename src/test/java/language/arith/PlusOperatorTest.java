@@ -36,6 +36,26 @@ public class PlusOperatorTest {
   }
 
   @Test (timeout = 5000)
+  public void testPerformOperationAddNegative() {
+    operator.setOperand(0, new Operand<Integer>(2));
+    operator.setOperand(1, new Operand<Integer>(-2));
+
+    Operand<Integer> result = operator.performOperation();
+    int value = result.getValue();
+    assertEquals("Operator applied to 2 and -2 should produce 0.", 0,  value);
+  }
+
+  @Test (timeout = 5000)
+  public void testPerformOperationAddZero() {
+    operator.setOperand(0, new Operand<Integer>(2));
+    operator.setOperand(1, new Operand<Integer>(0));
+
+    Operand<Integer> result = operator.performOperation();
+    int value = result.getValue();
+    assertEquals("Operator applied to 2 and 0 should produce 2.", 2,  value);
+  }
+
+  @Test (timeout = 5000)
   public void testGetNumberOfArguments() {
     assertEquals("Binary operator should have 2 arguments.", operator.getNumberOfArguments(), 2);
   }
