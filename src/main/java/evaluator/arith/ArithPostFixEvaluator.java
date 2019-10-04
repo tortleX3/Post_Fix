@@ -1,8 +1,11 @@
 package evaluator.arith;
 
+import evaluator.IllegalPostFixExpressionException;
 import evaluator.PostFixEvaluator;
 import language.Operand;
+import language.Operator;
 import parser.arith.ArithPostFixParser;
+import stack.LinkedStack;
 import stack.StackInterface;
 
 
@@ -12,14 +15,17 @@ import stack.StackInterface;
  */
 public class ArithPostFixEvaluator implements PostFixEvaluator<Integer> {
 
+  /**
+   * <p></p>
+   * stack stores operands.
+   */
   private final StackInterface<Operand<Integer>> stack;
 
   /**
    * Constructs an {@link ArithPostFixEvaluator}.
    */
   public ArithPostFixEvaluator() {
-    this.stack = null; //TODO Initialize to your LinkedStack
-  }
+    this.stack = new LinkedStack<>(); }
 
   /**
    * Evaluates a postfix expression.
@@ -34,18 +40,34 @@ public class ArithPostFixEvaluator implements PostFixEvaluator<Integer> {
     while (parser.hasNext()) {
       switch (parser.nextType()) { 
         case OPERAND:
-          //TODO What do we do when we see an operand?
+          stack.push(parser.nextOperand());
           break;
         case OPERATOR:
-          //TODO What do we do when we see an operator?
+          Operator operate = parser.nextOperator();
+          if (stack.isEmpty() || (operate.getNumberOfArguments() == 2 && stack.size() == 1))
+            throw new IllegalPostFixExpressionException("There is not a valid number of operands to operate on");
+
+          if (operate.getNumberOfArguments() == 1) {
+            Operand<Integer> op0 = stack.pop();
+
+            operate.setOperand(0,op0);
+            stack.push(operate.performOperation());
+          } else {
+            Operand<Integer> op1 = stack.pop();
+            Operand<Integer> op0 = stack.pop();
+
+            operate.setOperand(0, op0);
+            operate.setOperand(1, op1);
+            stack.push(operate.performOperation());
+          }
           break;
         default:
-          //TODO If we get here, something went terribly wrong
       }
     }
+    if(stack.size() > 1)
+      throw new IllegalPostFixExpressionException("There is more operands than operators");
 
-    //TODO What do we return?
-    return null;
+    return stack.pop().getValue();
   }
 
 }
