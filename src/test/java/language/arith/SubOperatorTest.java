@@ -34,6 +34,26 @@ public class SubOperatorTest {
     assertEquals("Operator applied to 5 and 7 should produce -2.", 5 - 7,  value);
   }
 
+  @Test (timeout = 5000)
+  public void testPerformOperationSubtractNegative() {
+    operator.setOperand(0, new Operand<Integer>(7));
+    operator.setOperand(1, new Operand<Integer>(-2));
+
+    Operand<Integer> result = operator.performOperation();
+    int value = result.getValue();
+    assertEquals("Operator applied to 7 and -2 should produce 9.", 9,  value);
+  }
+
+  @Test (timeout = 5000)
+  public void testPerformOperationSubtractZero() {
+    operator.setOperand(0, new Operand<Integer>(3));
+    operator.setOperand(1, new Operand<Integer>(0));
+
+    Operand<Integer> result = operator.performOperation();
+    int value = result.getValue();
+    assertEquals("Operator applied to 3 and 0 should produce 3.", 3,  value);
+  }
+
   @Test (timeout = 5000, expected = IllegalArgumentException.class)
   public void testIllegalArgumentException() {
     operator.setOperand(2, op0);
